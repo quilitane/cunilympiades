@@ -3,7 +3,7 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # ou master si ta branche principale
+      - main   # ou master selon ton projet
 
 permissions:
   contents: write
@@ -34,6 +34,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist   # <-- important : publie le contenu de dist directement
           force_orphan: true
-          cname: '' # ⚠️ évite la config de domaine custom
