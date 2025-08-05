@@ -11,7 +11,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       </HashRouter>
     </DataProvider>
