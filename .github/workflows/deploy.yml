@@ -3,7 +3,7 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # ⚠️ adapte si ta branche principale s'appelle autrement (ex: master)
+      - main   # adapte si ta branche principale n'est pas 'main'
 
 jobs:
   build:
@@ -32,3 +32,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true
