@@ -3,7 +3,7 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # ⚠️ mets le nom de ta branche principale si ce n'est pas "main"
+      - main   # ⚠️ adapte si ta branche principale s'appelle autrement (ex: master)
 
 jobs:
   build:
@@ -23,6 +23,9 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Add .nojekyll
+        run: touch dist/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
