@@ -3,10 +3,10 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # ⚠️ change si ta branche principale n’est pas 'main'
+      - main   # ou master si ta branche principale
 
 permissions:
-  contents: write    # ⬅️ donne le droit de créer/pousser des branches
+  contents: write
 
 jobs:
   build:
@@ -35,4 +35,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_orphan: true   # ⬅️ recrée une branche gh-pages propre à chaque fois
+          force_orphan: true
+          cname: '' # ⚠️ évite la config de domaine custom
